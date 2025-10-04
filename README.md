@@ -27,3 +27,26 @@ forge test --mt testUnderflow -vvvv
 ```bash
 forge test --mt testReplayAttack -vvvv
 ```
+
+
+## Get Storage Slot Value of on-Chain contract
+```bash
+curl -X POST \
+  --data '{
+    "jsonrpc":"2.0",
+    "method":"eth_getStorageAt",
+    "params":[
+      "0xContractAddress",
+      "0xSlotIndex",
+      "latest"
+    ],
+    "id":1
+  }' \
+  -H "Content-Type: application/json" \
+  https://your-rpc-url.com
+
+```
+
+
+- Smart Contract Storage Layout
+https://tintinweb.github.io/smart-contract-storage-viewer/

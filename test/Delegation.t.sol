@@ -3,6 +3,7 @@ pragma solidity ^0.8.20;
 
 import "forge-std/Test.sol";
 
+// https://tintinweb.github.io/smart-contract-storage-viewer/
 /// Simple proxy that delegates all calls to an implementation
 contract Proxy {
     address public owner; // slot 0
@@ -52,6 +53,9 @@ contract ImplV2 {
     address public owner; // now slot 1 (used to be slot 0)
     address public implementation; // now slot 2 (used to be slot 1)
     uint256 public value; // now slot 3 (used to be slot 2)
+
+
+
 
     function setValue(uint256 _v) public {
         value = _v;
